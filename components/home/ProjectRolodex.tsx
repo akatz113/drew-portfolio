@@ -32,22 +32,22 @@ export default function ProjectRolodex() {
     <GlassCard className="flex flex-col gap-4">
       <div className="flex items-center justify-between">
         <div>
-          <p className="text-xs text-zinc-500 font-mono tracking-widest uppercase mb-1">Projects</p>
-          <p className="text-zinc-400 text-xs">
+          <p className="text-xs text-stone-500 font-mono tracking-widest uppercase mb-1">Projects</p>
+          <p className="text-stone-400 text-xs">
             {currentIndex + 1} / {projects.length}
           </p>
         </div>
         <div className="flex items-center gap-2">
           <button
             onClick={prev}
-            className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700/50 transition-colors"
+            className="p-1.5 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-700/50 transition-colors"
             aria-label="Previous project"
           >
             <ChevronLeft size={18} />
           </button>
           <button
             onClick={next}
-            className="p-1.5 rounded-lg text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700/50 transition-colors"
+            className="p-1.5 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-700/50 transition-colors"
             aria-label="Next project"
           >
             <ChevronRight size={18} />
@@ -71,15 +71,15 @@ export default function ProjectRolodex() {
                 {project.category}
               </span>
             </div>
-            <h3 className="text-zinc-100 font-semibold text-lg leading-tight">
+            <h3 className="text-stone-100 font-semibold text-lg leading-tight">
               {project.title}
             </h3>
-            <p className="text-zinc-400 text-sm leading-relaxed">{project.description}</p>
+            <p className="text-stone-400 text-sm leading-relaxed">{project.description}</p>
             <div className="flex flex-wrap gap-1.5 pt-1">
               {project.tags.map((tag) => (
                 <span
                   key={tag}
-                  className="text-xs text-zinc-500 bg-zinc-800/60 border border-zinc-700/50 px-2 py-0.5 rounded-full"
+                  className="text-xs text-stone-500 bg-stone-800/60 border border-stone-700/50 px-2 py-0.5 rounded-full"
                 >
                   {tag}
                 </span>
@@ -99,7 +99,7 @@ export default function ProjectRolodex() {
               setCurrentIndex(i);
             }}
             className={`h-1.5 rounded-full transition-all duration-300 ${
-              i === currentIndex ? "w-4 bg-indigo-400" : "w-1.5 bg-zinc-600"
+              i === currentIndex ? "w-4 bg-amber-400" : "w-1.5 bg-stone-600"
             }`}
             aria-label={`Go to project ${i + 1}`}
           />

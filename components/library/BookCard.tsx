@@ -29,26 +29,26 @@ export default function BookCard({ book }: BookCardProps) {
           className="absolute inset-0 glass rounded-2xl overflow-hidden flex flex-col"
           style={{ backfaceVisibility: "hidden" }}
         >
-          <div className="flex-1 bg-zinc-800/60 flex items-center justify-center p-4">
+          <div className="flex-1 bg-stone-800/60 flex items-center justify-center p-4">
             {/* Cover placeholder — replace with <Image> once you have real covers */}
-            <div className="w-24 h-32 rounded-lg bg-gradient-to-br from-indigo-500/30 to-purple-600/30 border border-zinc-700/50 flex items-center justify-center">
-              <span className="text-zinc-400 text-xs text-center px-2 leading-tight">{book.title}</span>
+            <div className="w-24 h-32 rounded-lg bg-gradient-to-br from-amber-500/30 to-orange-600/30 border border-stone-700/50 flex items-center justify-center">
+              <span className="text-stone-400 text-xs text-center px-2 leading-tight">{book.title}</span>
             </div>
           </div>
-          <div className="p-4 border-t border-zinc-700/40">
-            <p className="text-zinc-100 text-sm font-semibold leading-tight line-clamp-1">{book.title}</p>
-            <p className="text-zinc-500 text-xs mt-0.5">{book.author}</p>
+          <div className="p-4 border-t border-stone-700/40">
+            <p className="text-stone-100 text-sm font-semibold leading-tight line-clamp-1">{book.title}</p>
+            <p className="text-stone-500 text-xs mt-0.5">{book.author}</p>
             <div className="flex items-center gap-0.5 mt-2">
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star
                   key={i}
                   size={12}
-                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-zinc-700"}
+                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-stone-700"}
                 />
               ))}
             </div>
           </div>
-          <div className="absolute bottom-2 right-3 text-zinc-600 text-xs">tap to flip</div>
+          <div className="absolute bottom-2 right-3 text-stone-600 text-xs">tap to flip</div>
         </div>
 
         {/* Back — details */}
@@ -62,15 +62,15 @@ export default function BookCard({ book }: BookCardProps) {
                 <Star
                   key={i}
                   size={13}
-                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-zinc-700"}
+                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-stone-700"}
                 />
               ))}
             </div>
-            <p className="text-zinc-300 text-xs leading-relaxed">{book.description}</p>
+            <p className="text-stone-300 text-xs leading-relaxed">{book.description}</p>
           </div>
 
-          <blockquote className="border-l-2 border-indigo-500/60 pl-3 mt-2">
-            <p className="text-zinc-400 text-xs italic leading-relaxed line-clamp-4">
+          <blockquote className="border-l-2 border-amber-500/60 pl-3 mt-2">
+            <p className="text-stone-400 text-xs italic leading-relaxed line-clamp-4">
               &ldquo;{book.favoriteQuote}&rdquo;
             </p>
           </blockquote>
