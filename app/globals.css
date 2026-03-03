@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0c0a09;
+  --background: #44403c;
   --foreground: #fafaf9;
 }
 
@@ -19,15 +19,15 @@ body {
 }
 
 .glass {
-  background: rgba(28, 25, 23, 0.65);
+  background: rgba(20, 18, 16, 0.72);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(68, 64, 60, 0.4);
+  border: 1px solid rgba(87, 83, 78, 0.5);
 }
 
 .glass-strong {
-  background: rgba(28, 25, 23, 0.88);
+  background: rgba(20, 18, 16, 0.92);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(87, 83, 78, 0.5);
+  border: 1px solid rgba(105, 100, 94, 0.55);
 }
