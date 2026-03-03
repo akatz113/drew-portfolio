@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 import type { Book } from "@/lib/data/books";
@@ -11,6 +12,9 @@ interface BookCardProps {
 
 export default function BookCard({ book }: BookCardProps) {
   const [isFlipped, setIsFlipped] = useState(false);
+  const [imgError, setImgError] = useState(false);
+
+  const showCover = book.coverUrl && !imgError;
 
   return (
     <div
@@ -30,10 +34,22 @@ export default function BookCard({ book }: BookCardProps) {
           style={{ backfaceVisibility: "hidden" }}
         >
           <div className="flex-1 bg-stone-800/60 flex items-center justify-center p-4">
-            {/* Cover placeholder — replace with <Image> once you have real covers */}
-            <div className="w-24 h-32 rounded-lg bg-gradient-to-br from-amber-500/30 to-orange-600/30 border border-stone-700/50 flex items-center justify-center">
-              <span className="text-stone-400 text-xs text-center px-2 leading-tight">{book.title}</span>
-            </div>
+            {showCover ? (
+              <div className="relative w-24 h-32 rounded-lg overflow-hidden shadow-md">
+                <Image
+                  src={book.coverUrl}
+                  alt={book.title}
+                  fill
+                  className="object-cover"
+                  onError={() => setImgError(true)}
+                  sizes="96px"
+                />
+              </div>
+            ) : (
+              <div className="w-24 h-32 rounded-lg bg-gradient-to-br from-amber-500/30 to-orange-600/30 border border-stone-700/50 flex items-center justify-center">
+                <span className="text-stone-400 text-xs text-center px-2 leading-tight">{book.title}</span>
+              </div>
+            )}
           </div>
           <div className="p-4 border-t border-stone-700/40">
             <p className="text-stone-100 text-sm font-semibold leading-tight line-clamp-1">{book.title}</p>

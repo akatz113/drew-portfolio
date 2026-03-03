@@ -8,49 +8,96 @@ export interface Book {
   favoriteQuote: string;
 }
 
+export interface CurrentlyReadingBook {
+  id: string;
+  title: string;
+  author: string;
+  coverUrl: string;
+}
+
 export const books: Book[] = [
   {
     id: "book-1",
-    title: "The Pragmatic Programmer",
-    author: "David Thomas & Andrew Hunt",
-    coverUrl: "/covers/pragmatic-programmer.jpg",
+    title: "The Big Print",
+    author: "Lawrence Lepard",
+    coverUrl: "",
     rating: 5,
     description:
-      "A timeless guide to the craft of software development. Every chapter contains immediately actionable advice that changes how you think about code.",
-    favoriteQuote:
-      "You can't write perfect software. Did that hurt? It shouldn't. Accept it as an axiom of life.",
+      "A thorough examination of decades of monetary expansion and its consequences. Lepard makes a compelling case for sound money principles and explains why hard assets matter in an era of endless printing.",
+    favoriteQuote: "Your favorite quote from this book goes here.",
   },
   {
     id: "book-2",
-    title: "The Design of Everyday Things",
-    author: "Don Norman",
-    coverUrl: "/covers/design-of-everyday-things.jpg",
+    title: "The Little Book of Common Sense Investing",
+    author: "John C. Bogle",
+    coverUrl: "https://covers.openlibrary.org/b/id/10464385-L.jpg",
     rating: 5,
     description:
-      "Norman's seminal work on human-centered design changed the way I approach every engineering decision — physical or digital.",
+      "Bogle's timeless argument for low-cost index fund investing over active management. A simple yet powerful framework for building long-term wealth by getting out of your own way.",
     favoriteQuote:
-      "Design is really an act of communication, which means having a deep understanding of the person with whom the designer is communicating.",
+      "The stock market is a giant distraction to the business of investing.",
   },
   {
     id: "book-3",
-    title: "Surely You're Joking, Mr. Feynman!",
-    author: "Richard P. Feynman",
-    coverUrl: "/covers/feynman.jpg",
+    title: "The Constitution of Liberty",
+    author: "Friedrich Hayek",
+    coverUrl: "https://covers.openlibrary.org/b/id/8151148-L.jpg",
     rating: 5,
     description:
-      "Part autobiography, part physics lesson, and entirely inspirational. Feynman's relentless curiosity is something I try to carry into every project.",
+      "Hayek's most comprehensive defense of classical liberalism. A rigorous philosophical argument for individual liberty, spontaneous order, and the rule of law over central planning.",
     favoriteQuote:
-      "The first principle is that you must not fool yourself — and you are the easiest person to fool.",
+      "We shall not grow wiser before we learn that much that we have done was very foolish.",
   },
   {
     id: "book-4",
-    title: "Zero to One",
-    author: "Peter Thiel",
-    coverUrl: "/covers/zero-to-one.jpg",
+    title: "Hayek for the 21st Century",
+    author: "Thomas J. DiLorenzo",
+    coverUrl: "",
     rating: 4,
     description:
-      "A contrarian's guide to building something genuinely new. It reframes how I think about what's worth building and why.",
+      "DiLorenzo translates Hayek's foundational insights into the contemporary political and economic landscape, making his ideas immediately relevant to modern debates about markets and government.",
+    favoriteQuote: "Your favorite quote from this book goes here.",
+  },
+  {
+    id: "book-5",
+    title: "Chaos Theory",
+    author: "Bob Murphy",
+    coverUrl: "https://covers.openlibrary.org/b/id/12678236-L.jpg",
+    rating: 4,
+    description:
+      "Murphy examines how voluntary markets, not governments, are uniquely capable of providing law, security, and order — a thought-provoking challenge to the state monopoly on these services.",
+    favoriteQuote: "Your favorite quote from this book goes here.",
+  },
+  {
+    id: "book-6",
+    title: "Capitalism and Freedom",
+    author: "Milton Friedman",
+    coverUrl: "https://covers.openlibrary.org/b/id/140808-L.jpg",
+    rating: 5,
+    description:
+      "Friedman's landmark work on the connection between economic freedom and political freedom. An indispensable case for free markets and limited government that remains as relevant as ever.",
     favoriteQuote:
-      "Every moment in business happens only once. The next Bill Gates will not build an operating system.",
+      "A society that puts equality before freedom will get neither. A society that puts freedom before equality will get a great measure of both.",
+  },
+];
+
+export const currentlyReading: CurrentlyReadingBook[] = [
+  {
+    id: "cr-1",
+    title: "Human Action",
+    author: "Ludwig Von Mises",
+    coverUrl: "https://covers.openlibrary.org/b/id/5287720-L.jpg",
+  },
+  {
+    id: "cr-2",
+    title: "Breve Historia De Puerto Rico",
+    author: "José Carlos Arroyo Muñoz",
+    coverUrl: "",
+  },
+  {
+    id: "cr-3",
+    title: "Lonesome Dove",
+    author: "Larry McMurtry",
+    coverUrl: "https://covers.openlibrary.org/b/id/8376548-L.jpg",
   },
 ];
