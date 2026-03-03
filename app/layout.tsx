@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="bg-stone-700">
+    <html lang="en" className="bg-stone-800">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-700 text-stone-100 min-h-screen`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-stone-800 text-stone-100 min-h-screen`}
       >
         <Navbar />
         <main className="pt-16">
