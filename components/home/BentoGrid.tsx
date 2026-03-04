@@ -1,7 +1,7 @@
 import HeroTile from "./HeroTile";
 import StatusTile from "./StatusTile";
 import HobbiesTile from "./HobbiesTile";
-import ProjectRolodex from "./ProjectRolodex";
+import ExperienceTile from "./ExperienceTile";
 
 export default function BentoGrid() {
   return (
@@ -21,9 +21,9 @@ export default function BentoGrid() {
         <HobbiesTile />
       </div>
 
-      {/* Project Rolodex — full width */}
+      {/* Experience gateway — full width */}
       <div className="lg:col-span-3">
-        <ProjectRolodex />
+        <ExperienceTile />
       </div>
     </div>
   );

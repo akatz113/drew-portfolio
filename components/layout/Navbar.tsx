@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, BookOpen } from "lucide-react";
+import { Home, Briefcase, BookOpen } from "lucide-react";
 
 const links = [
   { href: "/", label: "Home", icon: Home },
+  { href: "/experience", label: "Experience", icon: Briefcase },
   { href: "/library", label: "Library", icon: BookOpen },
 ];
 
