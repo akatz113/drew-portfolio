@@ -4,53 +4,61 @@ export interface Milestone {
   title: string;
   location: string;
   description: string;
-  type: "education" | "work" | "project";
+  type: "education" | "work" | "project" | "home";
+  link?: { label: string; href: string };
+  imageUrl?: string;
 }
 
 export const milestones: Milestone[] = [
   {
     id: "milestone-1",
-    date: "Aug 2022",
-    title: "Started at [University]",
-    location: "[City, State]",
+    date: "Through 2019",
+    title: "Grew up in the Cleveland Area",
+    location: "Chardon, Ohio",
     description:
-      "Began pursuing a B.S. in Mechanical Engineering. Joined the robotics club and the engineering honors society in the first semester.",
-    type: "education",
+      "Raised in Chardon, Ohio — a small town east of Cleveland. Graduated from Chardon High School and developed a lifelong loyalty to the Browns and Cavs, for better or worse.",
+    type: "home",
+    imageUrl: "/timeline/IMG_2427_cle.jpg",
   },
   {
     id: "milestone-2",
-    date: "May 2023",
-    title: "Engineering Intern — [Company A]",
-    location: "[City, State]",
+    date: "Aug 2019",
+    title: "B.S. Mechanical Engineering — Ohio State",
+    location: "Columbus, Ohio",
     description:
-      "Completed a summer internship supporting the mechanical design team. Owned the redesign of a production fixture, reducing assembly time by 20%.",
-    type: "work",
+      "Enrolled at The Ohio State University to pursue a degree in Mechanical Engineering. Built a foundation in design, thermodynamics, manufacturing, and engineering analysis over four years.",
+    type: "education",
+    imageUrl: "/timeline/IMG_4313.jpeg",
   },
   {
     id: "milestone-3",
-    date: "Jan 2024",
-    title: "Capstone Project Kick-off",
-    location: "[University]",
+    date: "2021 – 2022",
+    title: "Engineering Intern — GE Appliances",
+    location: "Louisville, Kentucky",
     description:
-      "Led a team of four to design and prototype a low-cost assistive device for individuals with limited hand mobility. Presented at the departmental expo.",
-    type: "project",
+      "Completed three internships at GE Appliances while attending Ohio State, gaining hands-on exposure to product development, manufacturing engineering, and large-scale appliance production.",
+    type: "work",
+    imageUrl: "/timeline/IMG_8107%201_ge_internship.JPG",
   },
   {
     id: "milestone-4",
-    date: "May 2024",
-    title: "Engineering Intern — [Company B]",
-    location: "[City, State]",
+    date: "May 2023",
+    title: "Graduated Summa Cum Laude — The Ohio State University",
+    location: "Columbus, Ohio",
     description:
-      "Returned for a second internship with a focus on product development. Ran tolerance stack-up analyses and contributed to DFM reviews.",
-    type: "work",
+      "Graduated Summa Cum Laude with a B.S. in Mechanical Engineering. Four years of coursework, internships, and projects pointed squarely toward a career at the intersection of engineering and technology.",
+    type: "education",
+    imageUrl: "/timeline/IMG_4042_graduation.JPG",
   },
   {
     id: "milestone-5",
-    date: "Present",
-    title: "Senior Year & Current Role",
-    location: "[City, State]",
+    date: "2023 – Present",
+    title: "Edison Engineering Program — GE Appliances",
+    location: "Louisville, Kentucky",
     description:
-      "Finishing up my degree while working part-time. Actively building projects at the intersection of mechanical engineering and software.",
-    type: "education",
+      "Joined GE Appliances as an Edison Engineer, rotating across six roles in manufacturing, quality, AI, and product engineering. Concurrently pursuing an M.S. in Mechanical Engineering at the University of Louisville.",
+    type: "work",
+    imageUrl: "/timeline/IMG_9243_ge_employed.jpeg",
+    link: { label: "See my rotations & projects", href: "/experience" },
   },
 ];

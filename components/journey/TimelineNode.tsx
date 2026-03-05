@@ -1,9 +1,11 @@
 "use client";
 
 import { useRef } from "react";
+import Link from "next/link";
 import { motion, useInView } from "framer-motion";
-import { MapPin } from "lucide-react";
+import { MapPin, ArrowRight } from "lucide-react";
 import type { Milestone } from "@/lib/data/timeline";
+import LightboxImage from "@/components/ui/LightboxImage";
 
 interface TimelineNodeProps {
   milestone: Milestone;
@@ -11,9 +13,10 @@ interface TimelineNodeProps {
 }
 
 const typeConfig = {
-  education: { color: "bg-blue-400", label: "Education", badge: "bg-blue-500/15 text-blue-400 border-blue-500/20" },
-  work: { color: "bg-green-400", label: "Work", badge: "bg-green-500/15 text-green-400 border-green-500/20" },
-  project: { color: "bg-purple-400", label: "Project", badge: "bg-purple-500/15 text-purple-400 border-purple-500/20" },
+  home:      { color: "bg-amber-400",  label: "Hometown",  badge: "bg-amber-500/15 text-amber-400 border-amber-500/20" },
+  education: { color: "bg-blue-400",   label: "Education", badge: "bg-blue-500/15 text-blue-400 border-blue-500/20" },
+  work:      { color: "bg-green-400",  label: "Work",      badge: "bg-green-500/15 text-green-400 border-green-500/20" },
+  project:   { color: "bg-purple-400", label: "Project",   badge: "bg-purple-500/15 text-purple-400 border-purple-500/20" },
 };
 
 export default function TimelineNode({ milestone, index }: TimelineNodeProps) {
@@ -38,14 +41,22 @@ export default function TimelineNode({ milestone, index }: TimelineNodeProps) {
           isLeft ? "md:mr-auto md:pr-8" : "md:ml-auto md:pl-8"
         }`}
       >
-        <div className="flex items-start justify-between gap-2 mb-3">
-          <div>
-            <p className="text-stone-500 text-xs font-mono mb-1">{milestone.date}</p>
-            <h3 className="text-stone-100 font-semibold text-base leading-tight">{milestone.title}</h3>
+        {/* Header: thumbnail + date/title + badge */}
+        <div className="flex items-start gap-3 mb-3">
+          {milestone.imageUrl && (
+            <LightboxImage src={milestone.imageUrl} alt={milestone.title} />
+          )}
+          <div className="flex-1 min-w-0">
+            <div className="flex items-start justify-between gap-2">
+              <div>
+                <p className="text-stone-500 text-xs font-mono mb-1">{milestone.date}</p>
+                <h3 className="text-stone-100 font-semibold text-base leading-tight">{milestone.title}</h3>
+              </div>
+              <span className={`text-xs font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${config.badge}`}>
+                {config.label}
+              </span>
+            </div>
           </div>
-          <span className={`text-xs font-medium px-2 py-0.5 rounded-full border whitespace-nowrap ${config.badge}`}>
-            {config.label}
-          </span>
         </div>
 
         <div className="flex items-center gap-1.5 text-stone-500 text-xs mb-3">
@@ -54,6 +65,16 @@ export default function TimelineNode({ milestone, index }: TimelineNodeProps) {
         </div>
 
         <p className="text-stone-400 text-sm leading-relaxed">{milestone.description}</p>
+
+        {milestone.link && (
+          <Link
+            href={milestone.link.href}
+            className="inline-flex items-center gap-1 text-amber-400 hover:text-amber-300 text-xs font-medium mt-3 transition-colors"
+          >
+            {milestone.link.label}
+            <ArrowRight size={11} />
+          </Link>
+        )}
       </motion.div>
     </div>
   );
