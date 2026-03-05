@@ -1,6 +1,7 @@
 "use client";
 
 import { motion, type Variants } from "framer-motion";
+import { Download } from "lucide-react";
 import GlassCard from "@/components/ui/GlassCard";
 
 const container: Variants = {
@@ -30,8 +31,8 @@ export default function HeroTile() {
         animate="show"
         className="relative z-10 space-y-3"
       >
-        <motion.p variants={item} className="text-stone-400 text-sm font-mono tracking-widest uppercase">
-          Hey, I&apos;m
+        <motion.p variants={item} className="text-stone-500 text-xs font-mono tracking-widest uppercase">
+          Mechanical Engineering &nbsp;·&nbsp; Software &nbsp;·&nbsp; Design
         </motion.p>
         <motion.h1
           variants={item}
@@ -41,17 +42,21 @@ export default function HeroTile() {
         </motion.h1>
         <motion.p
           variants={item}
-          className="text-xl sm:text-2xl font-medium text-amber-300"
-        >
-          Mechanical Engineer &amp; Builder
-        </motion.p>
-        <motion.p
-          variants={item}
           className="text-stone-400 text-sm sm:text-base max-w-sm leading-relaxed"
         >
-          I design physical systems, build software tools, and find the
-          intersection between the two wherever I can.
+          Building at the intersection of physical systems
+          and the digital tools that control them.
         </motion.p>
+        <motion.div variants={item}>
+          <a
+            href="/resume.pdf"
+            download
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-amber-500/15 border border-amber-500/30 text-amber-400 text-sm font-medium hover:bg-amber-500/25 hover:border-amber-500/50 transition-colors"
+          >
+            <Download size={14} />
+            Download Resume
+          </a>
+        </motion.div>
       </motion.div>
     </GlassCard>
   );

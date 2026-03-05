@@ -2,6 +2,7 @@ import HeroTile from "./HeroTile";
 import StatusTile from "./StatusTile";
 import HobbiesTile from "./HobbiesTile";
 import ExperienceTile from "./ExperienceTile";
+import SkillsTile from "./SkillsTile";
 
 export default function BentoGrid() {
   return (
@@ -21,9 +22,14 @@ export default function BentoGrid() {
         <HobbiesTile />
       </div>
 
-      {/* Experience gateway — full width */}
-      <div className="lg:col-span-3">
+      {/* Experience gateway — 2 cols */}
+      <div className="lg:col-span-2">
         <ExperienceTile />
+      </div>
+
+      {/* Skills — 1 col */}
+      <div className="lg:col-span-1">
+        <SkillsTile />
       </div>
     </div>
   );
