@@ -1,11 +1,11 @@
+"use client";
+
+import { motion } from "framer-motion";
 import { Mountain } from "lucide-react";
+import { adventures } from "@/lib/data/interests";
+import AdventureCard from "@/components/interests/AdventureCard";
 
-export const metadata = {
-  title: "Rock Climbing & Backpacking — Drew Katz",
-  description: "Routes climbed, trails hiked, and the outdoors that recharge me.",
-};
-
-export default function ClimbingPage() {
+export default function AdventuresPage() {
   return (
     <section className="max-w-5xl mx-auto px-6 py-10">
       <div className="mb-10">
@@ -13,16 +13,25 @@ export default function ClimbingPage() {
           <Mountain size={12} />
           Personal Interests
         </div>
-        <h1 className="text-4xl font-bold text-stone-100 mb-2">Rock Climbing & Backpacking</h1>
+        <h1 className="text-4xl font-bold text-stone-100 mb-2">Adventures</h1>
         <p className="text-stone-400 text-lg">
-          Routes climbed, trails hiked, and the outdoors that recharge me.
+          Rock climbing, cycling expeditions, and the outdoors that keep life interesting.
         </p>
       </div>
 
-      <div className="glass rounded-2xl px-8 py-12 text-center border border-dashed border-stone-700/60">
-        <Mountain size={32} className="text-orange-400/40 mx-auto mb-4" />
-        <p className="text-stone-500 text-sm">Content coming soon.</p>
-      </div>
+      <motion.div
+        className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        initial="hidden"
+        animate="visible"
+        variants={{
+          visible: { transition: { staggerChildren: 0.08 } },
+          hidden: {},
+        }}
+      >
+        {adventures.map((adventure, i) => (
+          <AdventureCard key={adventure.id} adventure={adventure} index={i} />
+        ))}
+      </motion.div>
     </section>
   );
 }

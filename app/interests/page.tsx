@@ -46,9 +46,9 @@ const interests = [
     iconBg: "bg-orange-500/10",
     iconText: "text-orange-400",
     arrowText: "text-orange-400",
-    title: "Rock Climbing & Backpacking",
-    description: "Routes climbed, trails hiked, and the outdoors that recharge me.",
-    cta: "Explore the outdoors",
+    title: "Adventures",
+    description: "Rock climbing, cycling trips, and the outdoors that keep life interesting.",
+    cta: "See the adventures",
   },
   {
     href: "/interests/projects",
