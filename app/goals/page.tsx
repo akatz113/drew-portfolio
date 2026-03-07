@@ -13,7 +13,7 @@ const goals = [
     iconText: "text-sky-400",
     category: "Engineering Design",
     title: "Dimensional Control",
-    body: "Strong part design starts with a shared language. I'm working toward my GDT-PT certification to formalize my understanding of tolerancing principles and communicate design intent more precisely across engineering and manufacturing teams.",
+    body: "Pursuing GDT-PT certification to formalize tolerancing expertise and communicate design intent more precisely across engineering and manufacturing teams. Currently applying GD&T and DFM principles in component redesigns and 3D scanning validation workflows at GE Appliances.",
     milestone: {
       label: "GDT-PT Certification",
       className: "bg-sky-500/10 border-sky-500/30 text-sky-400",
@@ -25,7 +25,7 @@ const goals = [
     iconText: "text-violet-400",
     category: "Software & AI",
     title: "Applied AI",
-    body: "Since the earliest wave of practical AI tools, I've made it a habit to put them to work — from building this site to rethinking how I approach problems day to day. My goal isn't to chase certifications here, but to stay genuinely curious, keep experimenting, and find ways to use AI to remove friction and open up possibilities that wouldn't otherwise exist.",
+    body: "Actively building and deploying AI solutions — from the company's first autonomous quality trend-detection system to tools that automate unstructured data processing across engineering teams. Committed to identifying high-impact applications of AI that eliminate manual workflows and enable data-driven decision-making at scale.",
     milestone: null,
   },
   {
@@ -34,7 +34,7 @@ const goals = [
     iconText: "text-amber-400",
     category: "Career Development",
     title: "Leadership",
-    body: "I've always been goal-driven, but my favorite moments in my career have come from working alongside teams where everyone is fully bought in on a hard problem. I want to keep developing as a leader by seeking out difficult roles, staying coachable, and learning from the people around me. The best way I know to grow in leadership is to put yourself in situations where you have no choice but to.",
+    body: "I believe the best way to grow as a leader is to seek out challenging roles that force you to learn, alongside people who push you to be better. I plan to keep pursuing complex, high-stakes problems where strong leadership and teamwork make the difference.",
     milestone: null,
   },
 ];

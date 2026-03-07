@@ -14,7 +14,7 @@ const interests = [
     iconText: "text-amber-400",
     arrowText: "text-amber-400",
     title: "My Library",
-    description: "Books I've read, rated, and loved — with the quotes that stuck with me.",
+    description: "What I'm currently reading and some of my favorite books.",
     cta: "Browse the shelf",
   },
   {
@@ -25,7 +25,7 @@ const interests = [
     iconText: "text-sky-400",
     arrowText: "text-sky-400",
     title: "Travel & Trips",
-    description: "Photo albums and memories from adventures around the world.",
+    description: "Photo albums and memories from trips that I've taken.",
     cta: "See the albums",
   },
   {
@@ -36,7 +36,7 @@ const interests = [
     iconText: "text-emerald-400",
     arrowText: "text-emerald-400",
     title: "Sports",
-    description: "Teams I follow, games I play, and stats that matter to me.",
+    description: "Sports teams that I support.",
     cta: "Check it out",
   },
   {
@@ -47,7 +47,7 @@ const interests = [
     iconText: "text-orange-400",
     arrowText: "text-orange-400",
     title: "Adventures",
-    description: "Rock climbing, cycling trips, and the outdoors that keep life interesting.",
+    description: "Rock climbing, backpacking, and cycling trips.",
     cta: "See the adventures",
   },
   {
@@ -58,7 +58,7 @@ const interests = [
     iconText: "text-violet-400",
     arrowText: "text-violet-400",
     title: "Personal Projects",
-    description: "Things I've built for fun — software, hardware, and everything in between.",
+    description: "Some projects I've worked on in my free time.",
     cta: "See what I've built",
   },
 ];
@@ -68,11 +68,11 @@ export default function InterestsPage() {
     <section className="max-w-5xl mx-auto px-6 py-10">
       <div className="mb-10">
         <p className="text-amber-400/60 text-xs font-mono uppercase tracking-wider mb-3">
-          Outside the Office
+          In my free time
         </p>
         <h1 className="text-4xl font-bold text-stone-100 mb-2">Personal Interests</h1>
         <p className="text-stone-400 text-lg">
-          The stuff that fills up my free time and keeps life interesting.
+          My favorite hobbies, activities, and some photos from traveling that I've done over the years.
         </p>
       </div>
 

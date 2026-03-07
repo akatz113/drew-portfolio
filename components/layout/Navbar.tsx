@@ -70,7 +70,7 @@ export default function Navbar() {
 
           {/* Resume download */}
           <a
-            href="/resume.pdf"
+            href="/Resume_030726.pdf"
             download
             className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
             aria-label="Download Resume"

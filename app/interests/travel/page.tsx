@@ -2,7 +2,8 @@
 
 import dynamic from "next/dynamic";
 import { useState } from "react";
-import { Plane, MapPin } from "lucide-react";
+import { Plane, MapPin, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { AnimatePresence, motion } from "framer-motion";
 import { trips, Trip } from "@/lib/data/interests";
 import PhotoModal from "@/components/interests/PhotoModal";
@@ -27,6 +28,12 @@ export default function TravelPage() {
 
   return (
     <section className="max-w-5xl mx-auto px-6 py-10">
+      {/* Back button */}
+      <Link href="/interests" className="inline-flex items-center gap-1 text-stone-500 hover:text-stone-300 text-sm transition-colors mb-6">
+        <ChevronLeft size={15} />
+        Interests
+      </Link>
+
       {/* Header */}
       <div className="mb-8">
         <div className="flex items-center gap-2 text-sky-400/60 text-xs font-mono uppercase tracking-wider mb-3">
