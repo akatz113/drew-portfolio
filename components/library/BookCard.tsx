@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
 import type { Book } from "@/lib/data/books";
 
 interface BookCardProps {
@@ -35,7 +34,7 @@ export default function BookCard({ book }: BookCardProps) {
         >
           <div className="flex-1 bg-stone-800/60 flex items-center justify-center p-4">
             {showCover ? (
-              <div className="relative w-24 h-32 rounded-lg overflow-hidden shadow-md">
+              <div className="relative w-20 h-28 rounded-lg overflow-hidden shadow-md">
                 <Image
                   src={book.coverUrl}
                   alt={book.title}
@@ -46,7 +45,7 @@ export default function BookCard({ book }: BookCardProps) {
                 />
               </div>
             ) : (
-              <div className="w-24 h-32 rounded-lg bg-gradient-to-br from-amber-500/30 to-orange-600/30 border border-stone-700/50 flex items-center justify-center">
+              <div className="w-20 h-28 rounded-lg bg-gradient-to-br from-amber-500/30 to-orange-600/30 border border-stone-700/50 flex items-center justify-center">
                 <span className="text-stone-400 text-xs text-center px-2 leading-tight">{book.title}</span>
               </div>
             )}
@@ -54,15 +53,6 @@ export default function BookCard({ book }: BookCardProps) {
           <div className="p-4 border-t border-stone-700/40">
             <p className="text-stone-100 text-sm font-semibold leading-tight line-clamp-1">{book.title}</p>
             <p className="text-stone-500 text-xs mt-0.5">{book.author}</p>
-            <div className="flex items-center gap-0.5 mt-2">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={12}
-                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-stone-700"}
-                />
-              ))}
-            </div>
           </div>
           <div className="absolute bottom-2 right-3 text-stone-600 text-xs">tap to flip</div>
         </div>
@@ -73,23 +63,9 @@ export default function BookCard({ book }: BookCardProps) {
           style={{ backfaceVisibility: "hidden", transform: "rotateY(180deg)" }}
         >
           <div className="space-y-3">
-            <div className="flex items-center gap-0.5">
-              {Array.from({ length: 5 }).map((_, i) => (
-                <Star
-                  key={i}
-                  size={13}
-                  className={i < book.rating ? "text-amber-400 fill-amber-400" : "text-stone-700"}
-                />
-              ))}
-            </div>
             <p className="text-stone-300 text-xs leading-relaxed">{book.description}</p>
           </div>
 
-          <blockquote className="border-l-2 border-amber-500/60 pl-3 mt-2">
-            <p className="text-stone-400 text-xs italic leading-relaxed line-clamp-4">
-              &ldquo;{book.favoriteQuote}&rdquo;
-            </p>
-          </blockquote>
         </div>
       </motion.div>
     </div>

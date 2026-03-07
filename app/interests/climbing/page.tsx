@@ -21,7 +21,7 @@ export default function AdventuresPage() {
         </div>
         <h1 className="text-4xl font-bold text-stone-100 mb-2">Adventures</h1>
         <p className="text-stone-400 text-lg">
-          Rock climbing, cycling expeditions, and the outdoors that keep life interesting.
+          Rock climbing, backpacking, and cycling expeditions.
         </p>
       </div>
 

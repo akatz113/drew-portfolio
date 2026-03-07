@@ -44,8 +44,7 @@ export default function HeroTile() {
           variants={item}
           className="text-stone-400 text-sm sm:text-base max-w-sm leading-relaxed"
         >
-          Building at the intersection of physical systems
-          and the digital tools that control them.
+          Combining mechanical system design, data analytics, and AI to engineer the future of product development and manufacturing.
         </motion.p>
         <motion.div variants={item}>
           <a

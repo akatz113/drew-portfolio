@@ -16,7 +16,7 @@ export default function HobbiesTile() {
           <div>
             <h3 className="text-stone-100 font-semibold mb-1">Personal Interests</h3>
             <p className="text-stone-400 text-sm leading-relaxed">
-              Books, travel, sports, climbing, and the projects I build for fun.
+              Books, travel, sports, climbing, and projects I've built for fun.
             </p>
           </div>
           <div className="flex items-center gap-1 text-amber-400 text-sm font-medium">

@@ -16,7 +16,7 @@ export const milestones: Milestone[] = [
     title: "Grew up in the Cleveland Area",
     location: "Chardon, Ohio",
     description:
-      "Raised in Chardon, Ohio — a small town east of Cleveland. Graduated from Chardon High School and developed a lifelong loyalty to the Browns and Cavs, for better or worse.",
+      "Raised in Chardon, Ohio — a small town east of Cleveland. Graduated from Chardon High School and developed a lifelong loyalty to the Browns and Cavs.",
     type: "home",
     imageUrl: "/timeline/IMG_2427_cle.jpg",
   },

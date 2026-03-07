@@ -9,7 +9,7 @@ export default function BookshelfGrid() {
       <div className="space-y-5">
         <div>
           <h2 className="text-2xl font-bold text-zinc-100 mb-1">Currently Reading...</h2>
-          <p className="text-zinc-400 text-sm">What&apos;s open on the nightstand right now.</p>
+          <p className="text-zinc-400 text-sm">What I&apos;m working on right now</p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
           {currentlyReading.map((book) => (
@@ -22,7 +22,7 @@ export default function BookshelfGrid() {
       <div className="space-y-5">
         <div>
           <h2 className="text-2xl font-bold text-zinc-100 mb-1">The Shelf</h2>
-          <p className="text-zinc-400 text-sm">Books I&apos;ve read — click any card to flip it for my take.</p>
+          <p className="text-zinc-400 text-sm">Books I&apos;ve recently read and enjoyed.</p>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {books.map((book) => (
