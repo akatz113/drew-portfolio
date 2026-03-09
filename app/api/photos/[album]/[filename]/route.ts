@@ -37,8 +37,10 @@ export async function GET(
       return new NextResponse("Not found", { status: 404 });
     }
 
-    // Fetch the blob content from its URL
-    const response = await fetch(blob.downloadUrl);
+    // Fetch from private blob using Bearer token auth
+    const response = await fetch(blob.url, {
+      headers: { Authorization: `Bearer ${process.env.BLOB_READ_WRITE_TOKEN}` },
+    });
     if (!response.ok) {
       return new NextResponse("Failed to fetch image", { status: 500 });
     }
