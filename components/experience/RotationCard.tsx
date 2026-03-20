@@ -11,7 +11,7 @@ export default function RotationCard({ rotation }: Props) {
   if (isUpcoming) {
     return (
       <div className="glass rounded-2xl p-6 md:p-8 relative overflow-hidden opacity-50 border border-dashed border-stone-700">
-        <span className="absolute top-4 right-6 text-7xl font-black text-stone-700/20 font-mono select-none leading-none">
+        <span className="absolute top-4 right-4 sm:right-6 text-4xl sm:text-7xl font-black text-stone-700/20 font-mono select-none leading-none">
           {String(number).padStart(2, "0")}
         </span>
         <div className="flex items-center justify-between gap-4 relative">
@@ -34,7 +34,7 @@ export default function RotationCard({ rotation }: Props) {
   return (
     <div className="glass rounded-2xl p-6 md:p-8 relative overflow-hidden">
       {/* Large background rotation number */}
-      <span className="absolute top-4 right-6 text-7xl font-black text-stone-700/30 font-mono select-none leading-none">
+      <span className="absolute top-4 right-4 sm:right-6 text-4xl sm:text-7xl font-black text-stone-700/30 font-mono select-none leading-none">
         {String(number).padStart(2, "0")}
       </span>
 

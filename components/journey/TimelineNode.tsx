@@ -27,8 +27,8 @@ export default function TimelineNode({ milestone, index }: TimelineNodeProps) {
 
   return (
     <div ref={ref} className="relative flex items-center mb-12 last:mb-0">
-      {/* Center dot */}
-      <div className="absolute left-1/2 -translate-x-1/2 z-10 flex items-center justify-center">
+      {/* Center dot — hidden on mobile to avoid overlapping cards */}
+      <div className="absolute left-1/2 -translate-x-1/2 z-10 hidden md:flex items-center justify-center">
         <div className={`w-3 h-3 rounded-full ${config.color} ring-4 ring-stone-800`} />
       </div>
 

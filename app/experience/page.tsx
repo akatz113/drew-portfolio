@@ -28,11 +28,11 @@ export default function ExperiencePage() {
       </div>
 
       {/* Rotation progress track */}
-      <div className="flex items-center gap-2">
+      <div className="flex items-center gap-1 sm:gap-2">
         {rotations.map((r, i) => (
-          <div key={r.id} className="flex items-center gap-2 flex-1 min-w-0">
+          <div key={r.id} className="flex items-center gap-1 sm:gap-2 flex-1 min-w-0">
             <div
-              className={`flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border whitespace-nowrap ${
+              className={`flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium border whitespace-nowrap ${
                 r.isCurrent
                   ? "bg-amber-500/15 border-amber-500/40 text-amber-400"
                   : r.isUpcoming
@@ -55,30 +55,45 @@ export default function ExperiencePage() {
         ))}
 
         {/* Graduation cap at the end */}
-        <div className="flex items-center gap-2">
-          <div className="h-px w-4 bg-stone-700/30" />
-          <div className="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-medium border border-dashed border-stone-700/50 text-stone-600 whitespace-nowrap">
+        <div className="flex items-center gap-1 sm:gap-2">
+          <div className="h-px w-2 sm:w-4 bg-stone-700/30" />
+          <div className="flex items-center gap-1 sm:gap-1.5 px-1.5 sm:px-3 py-0.5 sm:py-1 rounded-full text-[10px] sm:text-xs font-medium border border-dashed border-stone-700/50 text-stone-600 whitespace-nowrap">
             <GraduationCap size={11} />
-            Aug 2027
+            <span className="hidden sm:inline">Aug 2027</span>
+            <span className="sm:hidden">&#39;27</span>
           </div>
         </div>
       </div>
 
-      {/* Rotation Cards */}
+      {/* Completed / Current Rotation Cards — most recent first */}
       <div className="space-y-6">
-        {rotations.map((rotation) => (
+        {[...rotations].filter((r) => !r.isUpcoming).reverse().map((rotation) => (
           <RotationCard key={rotation.id} rotation={rotation} />
         ))}
       </div>
 
-      {/* Graduation milestone */}
-      <div className="flex items-center gap-4 glass rounded-2xl px-6 py-5 border border-dashed border-stone-700/60 opacity-50">
-        <GraduationCap size={22} className="text-stone-500 shrink-0" />
-        <div>
-          <p className="text-stone-400 text-sm font-semibold">M.S. Mechanical Engineering</p>
-          <p className="text-stone-600 text-xs mt-0.5">
-            {program.masters.university} · Expected {program.masters.expectedGraduation}
-          </p>
+      {/* Upcoming section divider */}
+      <div className="flex items-center gap-4">
+        <div className="h-px flex-1 bg-stone-700/40" />
+        <span className="text-stone-500 text-xs font-mono uppercase tracking-wider whitespace-nowrap">Upcoming</span>
+        <div className="h-px flex-1 bg-stone-700/40" />
+      </div>
+
+      {/* Upcoming Rotations + Graduation */}
+      <div className="space-y-6">
+        {rotations.filter((r) => r.isUpcoming).map((rotation) => (
+          <RotationCard key={rotation.id} rotation={rotation} />
+        ))}
+
+        {/* Graduation milestone */}
+        <div className="flex items-center gap-4 glass rounded-2xl px-6 py-5 border border-dashed border-stone-700/60 opacity-50">
+          <GraduationCap size={22} className="text-stone-500 shrink-0" />
+          <div>
+            <p className="text-stone-400 text-sm font-semibold">M.S. Mechanical Engineering</p>
+            <p className="text-stone-600 text-xs mt-0.5">
+              {program.masters.university} · Expected {program.masters.expectedGraduation}
+            </p>
+          </div>
         </div>
       </div>
 
