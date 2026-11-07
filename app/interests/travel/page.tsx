@@ -8,7 +8,7 @@ import { AnimatePresence, motion } from "framer-motion";
 import { trips, Trip } from "@/lib/data/interests";
 import PhotoModal from "@/components/interests/PhotoModal";
 
-const TravelMap = dynamic(() => import("@/components/interests/TravelMap"), {
+const TravelGlobe = dynamic(() => import("@/components/interests/TravelGlobe"), {
   ssr: false,
   loading: () => (
     <div className="w-full h-[480px] rounded-2xl bg-stone-900/60 border border-stone-700/50 flex items-center justify-center">
@@ -46,8 +46,8 @@ export default function TravelPage() {
         </p>
       </div>
 
-      {/* Interactive map */}
-      <TravelMap selectedTrip={selectedTrip} onTripSelect={handleTripSelect} />
+      {/* Interactive globe */}
+      <TravelGlobe selectedTrip={selectedTrip} onTripSelect={handleTripSelect} />
 
       {/* Trip cards */}
       <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
