@@ -9,7 +9,6 @@ const MIME: Record<string, string> = {
   ".jpeg": "image/jpeg",
   ".png": "image/png",
   ".webp": "image/webp",
-  ".heic": "image/jpeg",
 };
 
 export async function GET(
@@ -29,7 +28,6 @@ export async function GET(
   const blobPath = `photos/${album}/${filename}`;
 
   try {
-    // Find the blob by its exact pathname
     const result = await list({ prefix: blobPath, limit: 1 });
     const blob = result.blobs.find((b) => b.pathname === blobPath);
 
@@ -37,7 +35,6 @@ export async function GET(
       return new NextResponse("Not found", { status: 404 });
     }
 
-    // Fetch from private blob using Bearer token auth
     const response = await fetch(blob.url, {
       headers: { Authorization: `Bearer ${process.env.BLOB_READ_WRITE_TOKEN}` },
     });
@@ -47,24 +44,8 @@ export async function GET(
 
     const buffer = Buffer.from(await response.arrayBuffer());
     const ext = path.extname(filename).toLowerCase();
-
-    // Convert HEIC to JPEG on the fly
-    if (ext === ".heic") {
-      try {
-        const sharp = (await import("sharp")).default;
-        const jpegBuffer = await sharp(buffer).jpeg({ quality: 85 }).toBuffer();
-        return new NextResponse(jpegBuffer as unknown as BodyInit, {
-          headers: {
-            "Content-Type": "image/jpeg",
-            "Cache-Control": "public, max-age=86400",
-          },
-        });
-      } catch {
-        return new NextResponse("Failed to convert image", { status: 500 });
-      }
-    }
-
     const contentType = MIME[ext] ?? "application/octet-stream";
+
     return new NextResponse(buffer as unknown as BodyInit, {
       headers: {
         "Content-Type": contentType,
