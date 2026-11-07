@@ -31,3 +31,163 @@ body {
   -webkit-backdrop-filter: blur(20px);
   border: 1px solid rgba(105, 100, 94, 0.55);
 }
+
+/* ===== ARCADE THEME ===== */
+
+[data-theme="arcade"] body {
+  background: #0a0a0a !important;
+  font-family: var(--font-press-start), monospace !important;
+  color: #e0ffe8 !important;
+  image-rendering: pixelated;
+}
+
+[data-theme="arcade"] .glass {
+  background: rgba(0, 10, 20, 0.85) !important;
+  backdrop-filter: none !important;
+  border: 2px solid #00ff88 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 10px rgba(0, 255, 136, 0.15), inset 0 0 30px rgba(0, 255, 136, 0.03) !important;
+}
+
+[data-theme="arcade"] .glass-strong {
+  background: rgba(0, 5, 10, 0.95) !important;
+  backdrop-filter: none !important;
+  border: 2px solid #00ff88 !important;
+  border-radius: 4px !important;
+  box-shadow: 0 0 15px rgba(0, 255, 136, 0.2) !important;
+}
+
+/* Neon heading glow */
+[data-theme="arcade"] h1,
+[data-theme="arcade"] h2,
+[data-theme="arcade"] h3 {
+  font-family: var(--font-press-start), monospace !important;
+  color: #00ff88 !important;
+  text-shadow: 0 0 8px rgba(0, 255, 136, 0.6), 0 0 20px rgba(0, 255, 136, 0.3) !important;
+  letter-spacing: 0.05em !important;
+}
+
+[data-theme="arcade"] p,
+[data-theme="arcade"] span,
+[data-theme="arcade"] a,
+[data-theme="arcade"] li,
+[data-theme="arcade"] button {
+  font-family: var(--font-press-start), monospace !important;
+}
+
+/* Scale down pixel font for readability */
+[data-theme="arcade"] h1 { font-size: 1.5rem !important; line-height: 2 !important; }
+[data-theme="arcade"] h2 { font-size: 1.1rem !important; line-height: 1.8 !important; }
+[data-theme="arcade"] h3 { font-size: 0.85rem !important; line-height: 1.7 !important; }
+[data-theme="arcade"] p,
+[data-theme="arcade"] span,
+[data-theme="arcade"] a,
+[data-theme="arcade"] li,
+[data-theme="arcade"] button { font-size: 0.6rem !important; line-height: 1.8 !important; }
+
+/* Accent color overrides */
+[data-theme="arcade"] .text-stone-100,
+[data-theme="arcade"] .text-white {
+  color: #e0ffe8 !important;
+}
+
+[data-theme="arcade"] .text-stone-400,
+[data-theme="arcade"] .text-stone-500 {
+  color: #55cc77 !important;
+}
+
+[data-theme="arcade"] .text-stone-600 {
+  color: #337744 !important;
+}
+
+[data-theme="arcade"] .text-amber-400 {
+  color: #ffcc00 !important;
+  text-shadow: 0 0 6px rgba(255, 204, 0, 0.5) !important;
+}
+
+[data-theme="arcade"] .bg-stone-800 {
+  background-color: #0a0a0a !important;
+}
+
+[data-theme="arcade"] .bg-stone-700\/50 {
+  background-color: rgba(0, 255, 136, 0.15) !important;
+}
+
+[data-theme="arcade"] .border-stone-700\/50,
+[data-theme="arcade"] .border-stone-700\/60 {
+  border-color: rgba(0, 255, 136, 0.3) !important;
+}
+
+/* Gradient overrides */
+[data-theme="arcade"] .from-amber-500\/10 {
+  --tw-gradient-from: rgba(0, 255, 136, 0.1) !important;
+}
+[data-theme="arcade"] .to-orange-500\/5 {
+  --tw-gradient-to: rgba(0, 255, 136, 0.05) !important;
+}
+[data-theme="arcade"] .bg-amber-600\/10 {
+  background-color: rgba(0, 255, 136, 0.08) !important;
+}
+
+/* Neon link hover */
+[data-theme="arcade"] a:hover,
+[data-theme="arcade"] button:hover {
+  color: #fff !important;
+  text-shadow: 0 0 10px #00ff88, 0 0 25px rgba(0, 255, 136, 0.4) !important;
+}
+
+/* CRT rounded corners on cards */
+[data-theme="arcade"] .rounded-2xl { border-radius: 4px !important; }
+[data-theme="arcade"] .rounded-xl { border-radius: 3px !important; }
+[data-theme="arcade"] .rounded-lg { border-radius: 2px !important; }
+
+/* Scanline overlay */
+.arcade-scanlines {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    0deg,
+    rgba(0, 0, 0, 0.12) 0px,
+    rgba(0, 0, 0, 0.12) 1px,
+    transparent 1px,
+    transparent 3px
+  );
+}
+
+/* CRT vignette on body */
+[data-theme="arcade"] body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 9998;
+  background: radial-gradient(ellipse at center, transparent 60%, rgba(0, 0, 0, 0.5) 100%);
+}
+
+/* Pixel border glow on resume button */
+[data-theme="arcade"] .bg-amber-500\/15 {
+  background: rgba(0, 255, 136, 0.1) !important;
+  border-color: #00ff88 !important;
+  color: #00ff88 !important;
+}
+[data-theme="arcade"] .bg-amber-500\/15:hover {
+  background: rgba(0, 255, 136, 0.25) !important;
+  box-shadow: 0 0 16px rgba(0, 255, 136, 0.4) !important;
+}
+
+/* Blinking cursor effect on hero subtitle */
+[data-theme="arcade"] .tracking-widest::after {
+  content: "_";
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+/* Pixel-style scrollbar */
+[data-theme="arcade"] ::-webkit-scrollbar { width: 8px; }
+[data-theme="arcade"] ::-webkit-scrollbar-track { background: #0a0a0a; }
+[data-theme="arcade"] ::-webkit-scrollbar-thumb { background: #00ff88; border: 1px solid #0a0a0a; }

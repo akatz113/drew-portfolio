@@ -2,7 +2,8 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Home, Briefcase, Compass, Target, Download } from "lucide-react";
+import { Home, Briefcase, Compass, Target, Download, Gamepad2 } from "lucide-react";
+import { useTheme } from "@/components/theme/ThemeProvider";
 
 const links = [
   { href: "/", label: "Home", icon: Home, exact: true },
@@ -13,6 +14,7 @@ const links = [
 
 export default function Navbar() {
   const pathname = usePathname();
+  const { theme, toggleTheme, playSound } = useTheme();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-strong">
@@ -24,6 +26,8 @@ export default function Navbar() {
             <Link
               key={href}
               href={href}
+              onClick={() => playSound("navigate")}
+              onMouseEnter={() => playSound("hover")}
               className={`p-2 rounded-lg transition-colors ${
                 isActive
                   ? "text-white bg-stone-700/50"
@@ -38,10 +42,23 @@ export default function Navbar() {
 
         <div className="w-px h-5 bg-stone-700/60" />
 
+        <button
+          onClick={toggleTheme}
+          className={`p-2 rounded-lg transition-colors ${
+            theme === "arcade"
+              ? "text-green-400 bg-green-900/30"
+              : "text-stone-400 hover:text-stone-200 hover:bg-stone-800/50"
+          }`}
+          aria-label="Toggle arcade theme"
+        >
+          <Gamepad2 size={18} />
+        </button>
+
         <a
           href="https://github.com/akatz113"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => playSound("click")}
           className="p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
           aria-label="GitHub"
         >
@@ -54,6 +71,7 @@ export default function Navbar() {
           href="https://www.linkedin.com/in/drew-katz-9882a019a/"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => playSound("click")}
           className="p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
           aria-label="LinkedIn"
         >
@@ -65,6 +83,7 @@ export default function Navbar() {
         <a
           href="/Resume_030726.pdf"
           download
+          onClick={() => playSound("click")}
           className="p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
           aria-label="Download Resume"
         >
@@ -81,6 +100,8 @@ export default function Navbar() {
               <Link
                 key={href}
                 href={href}
+                onClick={() => playSound("navigate")}
+                onMouseEnter={() => playSound("hover")}
                 className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
                   isActive
                     ? "text-white bg-stone-700/50"
@@ -95,12 +116,27 @@ export default function Navbar() {
         </div>
 
         <div className="ml-auto flex items-center gap-1">
+          <button
+            onClick={toggleTheme}
+            onMouseEnter={() => playSound("hover")}
+            className={`p-2 rounded-lg transition-colors ${
+              theme === "arcade"
+                ? "text-green-400 bg-green-900/30"
+                : "text-stone-400 hover:text-stone-200 hover:bg-stone-800/50"
+            }`}
+            aria-label="Toggle arcade theme"
+          >
+            <Gamepad2 size={15} />
+          </button>
+
           <div className="w-px h-5 bg-stone-700/60 mx-1" />
 
           <a
             href="https://github.com/akatz113"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => playSound("click")}
+            onMouseEnter={() => playSound("hover")}
             className="p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
             aria-label="GitHub"
           >
@@ -113,6 +149,8 @@ export default function Navbar() {
             href="https://www.linkedin.com/in/drew-katz-9882a019a/"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => playSound("click")}
+            onMouseEnter={() => playSound("hover")}
             className="p-2 rounded-lg text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
             aria-label="LinkedIn"
           >
@@ -124,6 +162,8 @@ export default function Navbar() {
           <a
             href="/Resume_030726.pdf"
             download
+            onClick={() => playSound("click")}
+            onMouseEnter={() => playSound("hover")}
             className="flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-medium text-stone-400 hover:text-stone-200 hover:bg-stone-800/50 transition-colors"
             aria-label="Download Resume"
           >
